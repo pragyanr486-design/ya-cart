@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100b19">
+<meta name="description" content="YA CART - Discover phone accessories, charging essentials and everyday tech in Gangtok, Sikkim.">
+<title>YA CART | Everyday Tech, Better</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+ --bg:#0c0912;
+ --card:#171220;
+ --purple:#a875ff;
+ --light:#e9dcff;
+ --muted:#a49aad;
+ --border:#30243c;
+}
+body{
+ background:var(--bg);
+ color:#fff;
+ font-family:Arial,sans-serif;
+ line-height:1.6;
+}
+header{
+ display:flex;justify-content:space-between;
+ align-items:center;padding:18px 6%;
+ border-bottom:1px solid var(--border);
+ position:sticky;top:0;z-index:10;
+ background:#100b19ed;
+ backdrop-filter:blur(15px);
+}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--purple)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{color:#ddd;text-decoration:none;font-size:14px}
+.cart-btn,.primary{
+ background:var(--purple);color:#100b19;
+ padding:11px 17px;border:0;
+ border-radius:9px;font-weight:bold;cursor:pointer;
+}
+.hero{
+ padding:75px 7% 65px;
+ text-align:center;
+ background:radial-gradient(ellipse at 50% 10%,#46246c 0%,#171022 42%,#0c0912 80%);
+}
+.tag{
+ color:#d3b4ff;border:1px solid #75509a;
+ border-radius:30px;padding:7px 15px;
+ font-size:12px;display:inline-block;
+}
+.hero h1{
+ font-size:clamp(42px,8vw,76px);
+ line-height:1.1;margin:24px 0 15px;
+ letter-spacing:-3px;
+}
+.hero h1 span{color:var(--purple)}
+.hero p{color:#c2b9ce;max-width:490px;margin:auto}
+.hero .primary{margin-top:27px;display:inline-block;text-decoration:none}
+.section{padding:55px 7%}
+.section-head{
+ display:flex;justify-content:space-between;
+ align-items:end;margin-bottom:28px;gap:12px;
+}
+.section h2{font-size:29px}
+.section-head p,.muted{color:var(--muted);font-size:13px}
+.products{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.product{
+ background:var(--card);border:1px solid var(--border);
+ border-radius:16px;padding:13px;overflow:hidden;
+ transition:.25s;
+}
+.product:hover{transform:translateY(-5px);border-color:var(--purple)}
+.visual{
+ height:170px;border-radius:11px;
+ display:flex;align-items:center;justify-content:center;
+ font-size:76px;
+ background:linear-gradient(140deg,#342044,#171321);
+}
+.product h3{margin-top:15px;font-size:17px}
+.product p{color:var(--muted);font-size:12px;margin:5px 0 12px}
+.price-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-size:18px;font-weight:bold;color:var(--light)}
+.add{
+ background:#30213f;color:#e9dcff;border:1px solid #67458b;
+ padding:9px 12px;border-radius:8px;cursor:pointer;
+}
+.add:hover{background:var(--purple);color:#100b19}
+.banner{
+ margin:10px 7% 50px;padding:30px;
+ border-radius:17px;
+ background:linear-gradient(110deg,#3c2259,#171020);
+ border:1px solid #63418a;
+}
+.banner h2{font-size:25px;margin-bottom:7px}
+.banner p{color:#d1c5dd;font-size:14px}
+#cart{padding:35px 7%;background:#130f1b}
+.cart-item{
+ display:flex;justify-content:space-between;
+ padding:12px 0;border-bottom:1px solid var(--border);
+ gap:10px;
+}
+.cart-item button{background:none;color:#ff9baf;border:0;cursor:pointer}
+.cart-total{margin-top:18px;font-size:21px;font-weight:bold}
+.checkout{margin-top:15px;width:100%}
+.empty{color:var(--muted);padding:15px 0}
+footer{
+ padding:30px 7%;text-align:center;
+ border-top:1px solid var(--border);
+ color:var(--muted);font-size:13px;
+}
+footer strong{color:var(--light)}
+@media(max-width:650px){
+ header{padding:14px 5%}
+ nav{gap:11px}
+ nav a{font-size:12px}
+ .logo{font-size:21px}
+ .hero{padding:65px 6%}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .visual{height:125px;font-size:55px}
+ .product{padding:9px}
+ .product h3{font-size:14px}
+ .price{font-size:15px}
+ .add{padding:8px;font-size:11px}
+ .section{padding:40px 5%}
+ .banner{margin:5px 5% 35px}
+}
+@media(max-width:360px){
+ .products{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">YA <span>CART.</span></div>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#products">Shop</a>
+  <a href="#cart">Cart 🛒 <span id="count">0</span></a>
+ </nav>
+</header>
+
+<section class="hero" id="home">
+ <span class="tag">GANGTOK, SIKKIM • ONLINE STORE</span>
+ <h1>Everyday tech.<br><span>Better style.</span></h1>
+ <p>Discover useful phone accessories and everyday essentials. Simple products, convenient ordering.</p>
+ <a href="#products" class="primary">Explore collection →</a>
+</section>
+
+<section class="section" id="products">
+ <div class="section-head">
+  <div>
+   <h2>Our collection.</h2>
+   <p>Small upgrades. Better everyday experiences.</p>
+  </div>
+ </div>
+
+ <div class="products">
+
+  <article class="product">
+   <div class="visual">🌀</div>
+   <h3>Phone Ring Holder</h3>
+   <p>Easy grip • Everyday use</p>
+   <div class="price-row">
+    <span class="price">₹120</span>
+    <button class="add" onclick="add('Phone Ring Holder',120)">+ Add</button>
+   </div>
+  </article>
+
+  <article class="product">
+   <div class="visual">🔌</div>
+   <h3>Charging Cable</h3>
+   <p>Everyday charging essential</p>
+   <div class="price-row">
+    <span class="price">₹149</span>
+    <button class="add" onclick="add('Charging Cable',149)">+ Add</button>
+   </div>
+  </article>
+
+  <article class="product">
+   <div class="visual">📱</div>
+   <h3>Tempered Glass</h3>
+   <p>Screen protection essential</p>
+   <div class="price-row">
+    <span class="price">₹99</span>
+    <button class="add" onclick="add('Tempered Glass',99)">+ Add</button>
+   </div>
+  </article>
+
+  <article class="product">
+   <div class="visual">🎧</div>
+   <h3>Phone Accessories</h3>
+   <p>More everyday tech coming soon</p>
+   <div class="price-row">
+    <span class="price">Coming soon</span>
+   </div>
+  </article>
+
+ </div>
+</section>
+
+<section class="banner">
+ <h2>Something you need?</h2>
+ <p>Can't find your phone model or preferred accessory? Contact us and ask.</p>
+ <br>
+ <a class="primary" href="https://wa.me/917029140562?text=Hi%20YA%20CART!%20I%20want%20to%20enquire%20about%20a%20product.">
+  Chat with us →
+ </a>
+</section>
+
+<section id="cart">
+ <h2>Your shopping cart 🛒</h2>
+ <div id="items">
+  <p class="empty">Your cart is empty. Explore our collection!</p>
+ </div>
+ <div class="cart-total">Total: ₹<span id="total">0</span></div>
+ <button class="primary checkout" onclick="checkout()">Order via WhatsApp</button>
+ <p class="muted" style="margin-top:10px">
+  Delivery charges and availability will be confirmed separately.
+ </p>
+</section>
+
+<footer>
+ <strong>YA CART.</strong>
+ <p>Everyday tech. Better style.</p>
+ <p>Gangtok, Sikkim, India</p>
+ <p>© 2026 YA CART. All rights reserved.</p>
+</footer>
+
+<script>
+let cart=[];
+
+function add(name,price){
+ let item=cart.find(x=>x.name===name);
+ if(item){item.qty++}
+ else{cart.push({name,price,qty:1})}
+ render();
+}
+
+function removeItem(name){
+ cart=cart.filter(x=>x.name!==name);
+ render();
+}
+
+function render(){
+ let html='';
+ let total=0;
+ let count=0;
+
+ cart.forEach(item=>{
+  let subtotal=item.price*item.qty;
+  total+=subtotal;
+  count+=item.qty;
+  html+=`
+   <div class="cart-item">
+    <span>${item.name} × ${item.qty}</span>
+    <span>₹${subtotal}
+    <button onclick="removeItem('${item.name}')"> Remove</button></span>
+   </div>`;
+ });
+
+ document.getElementById('items').innerHTML=
+ html||'<p class="empty">Your cart is empty.</p>';
+ document.getElementById('total').textContent=total;
+ document.getElementById('count').textContent=count;
+}
+
+function checkout(){
+ if(cart.length===0){
+  alert('Please add a product first!');
+  return;
+ }
+
+ let message='Hello YA CART! I want to place an order:\n\n';
+ let total=0;
+
+ cart.forEach(item=>{
+  message+=item.name+' x '+item.qty+
+  ' = ₹'+(item.price*item.qty)+'\n';
+  total+=item.price*item.qty;
+ });
+
+ message+='\nTotal: ₹'+total;
+ message+='\nPlease confirm availability and delivery details.';
+
+ window.open(
+  'https://wa.me/917029140562?text='+encodeURIComponent(message),
+  '_blank'
+ );
+}
+</script>
+
+</body>
+</html>
